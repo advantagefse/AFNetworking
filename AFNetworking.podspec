@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   
   s.public_header_files = 'AFNetworking/AFNetworking.h'
   s.source_files = 'AFNetworking/AFNetworking.h'
+  s.resource_bundles = {'AFNetworking' => ['AFNetworking/PrivacyInfo.xcprivacy']}
   
   pch_AF = <<-EOS
 #ifndef TARGET_OS_IOS
@@ -27,10 +28,10 @@ Pod::Spec.new do |s|
 EOS
   s.prefix_header_contents = pch_AF
   
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.9'
-  s.watchos.deployment_target = '2.0'
-  s.tvos.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
+  s.osx.deployment_target = '10.13'
+  s.watchos.deployment_target = '4.0'
+  s.tvos.deployment_target = '12.0'
   
   s.subspec 'Serialization' do |ss|
     ss.source_files = 'AFNetworking/AFURL{Request,Response}Serialization.{h,m}'
@@ -47,9 +48,9 @@ EOS
   end
 
   s.subspec 'Reachability' do |ss|
-    ss.ios.deployment_target = '8.0'
-    ss.osx.deployment_target = '10.9'
-    ss.tvos.deployment_target = '9.0'
+    ss.ios.deployment_target = '12.0'
+    ss.osx.deployment_target = '10.13'
+    ss.tvos.deployment_target = '12.0'
 
     ss.source_files = 'AFNetworking/AFNetworkReachabilityManager.{h,m}'
     ss.public_header_files = 'AFNetworking/AFNetworkReachabilityManager.h'
@@ -69,8 +70,8 @@ EOS
   end
 
   s.subspec 'UIKit' do |ss|
-    ss.ios.deployment_target = '9.0'
-    ss.tvos.deployment_target = '9.0'
+    ss.ios.deployment_target = '12.0'
+    ss.tvos.deployment_target = '12.0'
     ss.dependency 'AFNetworking/NSURLSession'
 
     ss.public_header_files = 'UIKit+AFNetworking/*.h'
